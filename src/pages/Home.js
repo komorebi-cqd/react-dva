@@ -1,10 +1,9 @@
-import React from "react"
+import React from 'react'
 
-
-export const Home = function(){
+export default function Home() {
     return (
         <div>
-            Home
+            首页
         </div>
     )
 }

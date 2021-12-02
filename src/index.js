@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import dva from 'dva';
+import count from './model/count';
+import routerConfig from './routerConfig';
+import {createBrowserHistory} from 'history';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const app = dva({
+  history: createBrowserHistory(),
+});
+app.model(count);
+
+
+app.router(routerConfig);
+app.start('#root');
+
+
 
